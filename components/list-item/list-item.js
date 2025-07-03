@@ -4,7 +4,7 @@ const template = document.createElement("template");
 
 template.innerHTML = `
 
-<link rel="stylesheet" href="../components/list-item/list-item.css">
+<link rel="stylesheet" href="components/list-item/list-item.css">
 <li class="list_item">
                     <div class="list_item-value">
                         <!-- <input type="checkbox" id="todo_status" hidden> -->
