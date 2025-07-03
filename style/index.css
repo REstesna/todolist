@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'kanit-black';
-    src: url(/fonts/Kanit-Black.ttf);
+    src: url(../fonts/Kanit-Black.ttf);
 }
 
 @font-face {
     font-family: 'kanit-bold';
-    src: url(/fonts/Kanit-Bold.ttf);
+    src: url(../fonts/Kanit-Bold.ttf);
 }
 
 @font-face {
     font-family: 'kanit-medium';
-    src: url(/fonts/Kanit-Medium.ttf);
+    src: url(../fonts/Kanit-Medium.ttf);
 }
 
 @font-face {
     font-family: 'kanit-regular';
-    src: url(/fonts/Kanit-Regular.ttf);
+    src: url(../fonts/Kanit-Regular.ttf);
 }
 
 * {
