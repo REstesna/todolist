@@ -1,0 +1,123 @@
+.list_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--input-placeholer-color-C3C1E5);
+    color: var(--black-color-252525);
+    padding: 2rem 0;
+    transition: all 0.3s ease;
+    list-style-type: none;
+}
+
+.list_item-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'kanit-regular';
+}
+
+
+.checkbox_item {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid var(--purple-color-6C63FF);
+    border-radius: var(--main-radius);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.checkbox_item svg {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.checked_item {
+    background-color: var(--purple-color-6C63FF);
+    box-shadow: 0 0 9px -3px var(--purple-color-6C63FF);
+
+}
+
+.checked_item svg {
+    visibility: visible;
+    opacity: 1;
+}
+
+.list_item_options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.list_item_options svg {
+    width: 18px;
+    height: 18px;
+    stroke: #CDCDCD;
+    cursor: pointer;
+
+
+}
+
+.list_item_options svg path {
+    stroke: #CDCDCD;
+    transition: all 0.15s ease;
+}
+
+.list_item_options svg:first-child:hover path {
+    stroke: var(--purple-color-6C63FF);
+
+}
+
+.list_item_options svg:last-child:hover path {
+    stroke: #E50000;
+
+}
+
+.complate_task {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.searched_mark {
+    background-color: rgba(108, 99, 255, 0.2);
+}
+
+.list_item-value input {
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    color: var(--black-color-252525);
+    font-family: "kanit-regular";
+}
+
+
+#complate-edit:hover path{
+    stroke: #00C853;
+}
+#complate-edit path{
+    transition: all 0.15s ease;
+    
+
+}
+#complate-edit{
+    display: none;
+
+}
+.editing #complate-edit  {
+    display: block;
+}
+
+.editing #edit-task  {
+    display: none;
+}
+
