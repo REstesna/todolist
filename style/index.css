@@ -496,6 +496,10 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+.add_task_modal_actions > button {
+    letter-spacing: 1px;
+    font-family: "kanit-regular";
+}
 
 .add_task_modal_actions button:first-child {
     padding: 0.5rem 1rem;

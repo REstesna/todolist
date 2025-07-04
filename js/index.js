@@ -136,10 +136,12 @@ addTaskInput.addEventListener("focus", () => {
 // func for generate todos to DOM
 
 function generateTodos(todosArr) {
+  console.log(todosArr.length);
+  
   if (todosArr.length) {
     $.querySelector('#none_task').style.display = 'none';
     let docFrag = $.createDocumentFragment();
-  todosArr.forEach((item) => {
+    todosArr.forEach((item) => {
     let newItem = $.createElement("list-item");
 
     if (item.complate) {
@@ -153,6 +155,7 @@ function generateTodos(todosArr) {
 
   addTodosToDom(docFrag);
   } else {
+    listContainer.innerHTML = ''
     $.querySelector('#none_task').style.display = 'flex';
   }
 }

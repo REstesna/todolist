@@ -78,11 +78,14 @@ class listItemElem extends HTMLElement {
   }
 
   connectedCallback() {
+
+    // To just be border between tasks.
     document.querySelector(".list_container list-item:last-child").shadowRoot &&
       (document
         .querySelector(".list_container list-item:last-child")
         .shadowRoot.querySelector("li").style.border = "none");
 
+    // delete task btn handler    
     this.shadowRoot
       .querySelector("#delete-task")
       .addEventListener("click", () => {
@@ -110,6 +113,8 @@ class listItemElem extends HTMLElement {
           })
       });
 
+
+    // to check and complate task   
     this.shadowRoot
       .querySelector(".checkbox_item")
       .addEventListener("click", () => {
@@ -133,6 +138,7 @@ class listItemElem extends HTMLElement {
         localStorage.setItem("todos", JSON.stringify(localtodosArr));
       });
 
+    // get local todos :)  
     let localtodosArr = JSON.parse(localStorage.getItem("todos"));
     let mainTodoIndex = localtodosArr.findIndex(
       (item) => item.todoVal === this.querySelector("h3").innerHTML
@@ -143,6 +149,7 @@ class listItemElem extends HTMLElement {
         .classList.toggle("checked_item");
     }
 
+    // That the complete task is created first and then displayed. If it is not, it will be displayed in a mess for a moment.
     this.style.opacity = "0";
     setTimeout(() => {
       this.style.opacity = "1";
@@ -157,6 +164,14 @@ class listItemElem extends HTMLElement {
         this.editInput.addEventListener("blur", () => {
           this.complateEditTask();
         });
+
+        this.editInput.addEventListener('keyup', event => {
+          
+          if (event.keyCode === 13) {
+            this.complateEditTask()
+          }
+
+        } )
 
         this.editInput.value = this.querySelector("h3").innerHTML;
 
@@ -179,9 +194,16 @@ class listItemElem extends HTMLElement {
       .addEventListener("click", () => {
         this.complateEditTask();
       });
+
+    // edit task by ENTER
+
+    
+      
+    
   }
 
   complateEditTask() {
+
     let localtodosArr = JSON.parse(localStorage.getItem("todos"));
     let mainTodoIndex = localtodosArr.findIndex(
       (item) => item.todoVal === this.querySelector("h3").innerHTML
@@ -191,8 +213,14 @@ class listItemElem extends HTMLElement {
       .querySelector(".list_item_options")
       .classList.remove("editing");
 
-    this.querySelector("h3").innerHTML = this.editInput.value;
-    this.editInput.remove();
+    if (this.editInput.value.trim()) {
+
+      this.querySelector("h3").innerHTML = this.editInput.value.trim();
+    }  else {
+      this.querySelector("h3").innerHTML = this.querySelector('h3').innerHTML;
+    }
+    // this.editInput.remove();
+    this.editInput.style.display = 'none';
     this.querySelector("h3").style.display = "block";
 
     localtodosArr[mainTodoIndex].todoVal = this.editInput.value;
