@@ -366,6 +366,3 @@ function addTaskHandler() {
   }
 }
 
-
-// test 
-
