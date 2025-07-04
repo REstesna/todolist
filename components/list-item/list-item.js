@@ -206,7 +206,7 @@ class listItemElem extends HTMLElement {
 
     let localtodosArr = JSON.parse(localStorage.getItem("todos"));
     let mainTodoIndex = localtodosArr.findIndex(
-      (item) => item.todoVal === this.querySelector("h3").innerHTML
+      (item) => item.todoVal === this.querySelector("h3").innerHTML.trim()
     );
 
     this.shadowRoot
@@ -223,7 +223,7 @@ class listItemElem extends HTMLElement {
     this.editInput.style.display = 'none';
     this.querySelector("h3").style.display = "block";
 
-    localtodosArr[mainTodoIndex].todoVal = this.editInput.value;
+    localtodosArr[mainTodoIndex].todoVal = this.editInput.value.trim();
 
     localStorage.setItem("todos", JSON.stringify(localtodosArr));
   }
